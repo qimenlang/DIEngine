@@ -14,6 +14,17 @@ extern std::vector<int> zbuffer;
 extern TGAImage zbufferImage;
 extern Matrix Projection;
 int main(int argc, char** argv) {
+
+
+	YAML::Node node;
+
+	node["language"] = "cpp";
+	node["version"] = 2;
+
+
+	YAML::Node primes = YAML::Load("[2, 3, 5, 7, 11]");
+
+
 	Projection[3][2] = -1.f / (eye - center).norm();
 	TGAImage image(width, height, TGAImage::RGB);
 	//GouraudShader shader;

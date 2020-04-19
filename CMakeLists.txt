@@ -2,17 +2,28 @@
 
 project ("DIEngine")
 
-#SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(yaml_cpp_dll ${CMAKE_BINARY_DIR}/thirdparty/yaml-cpp)
 
-#SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(yaml_cpp_dll_file ${CMAKE_BINARY_DIR}/thirdparty/yaml-cpp/yaml-cppd.dll)
 
-#SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-
+set(exe_path ${CMAKE_BINARY_DIR}/engine)
 
 add_subdirectory(thirdparty)
 
 add_subdirectory(obj)
 
 add_subdirectory(engine)
+
+
+message("CMAKE_SOURCE_DIR:${CMAKE_SOURCE_DIR}")
+
+message("CMAKE_BINARY_DIR:${CMAKE_BINARY_DIR}")
+
+message("yaml_cpp_dll:${yaml_cpp_dll}")
+
+message("exe_path:${exe_path}")
+
+message("EXECUTABLE_OUTPUT_PATH:${EXECUTABLE_OUTPUT_PATH}")
+
+
 

@@ -2,4 +2,16 @@ cmake_minimum_required (VERSION 3.15)
 
 add_executable (Engine "base.cpp" "geometry.cpp" "model.cpp" "tgaimage.cpp" "main.cpp" ${OBJ_RCCS})
 
-target_link_libraries(Engine PUBLIC yaml-cpp)
+target_link_libraries(Engine PUBLIC glfw yaml-cpp)
+
+message("yaml_cpp_dll:${yaml_cpp_dll}")
+
+message("yaml_cpp_dll_file:${yaml_cpp_dll_file}")
+
+
+ADD_CUSTOM_COMMAND(
+          TARGET Engine POST_BUILD 
+          #COMMAND ${CMAKE_COMMAND} -E copy_directory ${yaml_cpp_dll} ${exe_path}
+          COMMAND ${CMAKE_COMMAND} -E copy_if_different ${yaml_cpp_dll_file} ${exe_path}
+)
+
