@@ -1,9 +1,18 @@
-﻿cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.15)
 
 project ("DIEngine")
 
-add_executable (DIEngine "DIEngine.cpp" "DIEngine.h")
+#SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+#SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+#SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+
 
 add_subdirectory(thirdparty)
 
-target_link_libraries(DIEngine PUBLIC glfw)
+add_subdirectory(obj)
+
+add_subdirectory(engine)
+

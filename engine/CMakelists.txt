@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 3.15)
+
+add_executable (Engine "base.cpp" "geometry.cpp" "model.cpp" "tgaimage.cpp" "main.cpp" ${OBJ_RCCS})
+
+target_link_libraries(Engine PUBLIC yaml-cpp)
